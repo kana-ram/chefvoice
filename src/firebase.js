@@ -3,14 +3,16 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBLf2glzj15CkCEzG0CPfJ7Xl_3Y4IOEqA",
-  authDomain: "chefvoice-2k25.firebaseapp.com",
-  projectId: "chefvoice-2k25",
-  storageBucket: "chefvoice-2k25.firebasestorage.app",
-  messagingSenderId: "312338905218",
-  appId: "1:312338905218:web:23a43244308fd77c67dc9b",
-  measurementId: "G-JM3S6R4LV7"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
+
+console.log("Loaded Firebase API Key:", process.env.REACT_APP_FIREBASE_API_KEY);
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
